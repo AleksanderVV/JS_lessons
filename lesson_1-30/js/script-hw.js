@@ -11,29 +11,6 @@ const storeDescription = {
 console.log(`My store - ${storeName}`);
 console.log(`My store administrator is ${storeDescription.employees[1]}`); */
 
-// ===============================================================================
-
-// const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
-
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
-
-// const oneLastViewedFilms = prompt("Один из последних просмотренных фильмов?", ""),
-//     firstFilmGrade = prompt("На сколько оцените его?", ""),
-//     twoLastViewedFilms = prompt("Один из последних просмотренных фильмов?", ""),
-//     secondFilmGrade = prompt("На сколько оцените его?", "");
-
-// personalMovieDB.movies[oneLastViewedFilms] = firstFilmGrade;
-// personalMovieDB.movies[twoLastViewedFilms] = secondFilmGrade;
-
-
-// console.log(personalMovieDB);
-
 // =======================================================
 
 // for (let i = 0; i < 3; i++) {
@@ -109,19 +86,52 @@ console.log(`My store administrator is ${storeDescription.employees[1]}`); */
 // }
 // console.log(result);
 
-const lines = 5;
-let result = '';
-let k = 0;
+// const lines = 5;
+// let result = '';
+// let k = 0;
 
-for (let i = 1; i <= lines + 1; i++) {
-    for (let j = 0; j < (i * 2) - 1; j++) {
-        if (j > 0) {
-            result += '*';
+// for (let i = 1; i <= lines + 1; i++) {
+//     for (let j = 0; j < (i * 2) - 1; j++) {
+//         if (j > 0) {
+//             result += '*';
+//         } else {
+//             result += ' '.repeat(lines - k) + '*';
+//         }
+//     }
+//     k++;
+//     result += '\n';
+// }
+// console.log(result);
+
+//-----------Functions--------------------
+
+// function sayHello(name = 'Антон') {
+//     return 'Привет, ' + name;
+// }
+
+// console.log(sayHello());
+
+// function neighboringNumbers(number) {
+//     let mass = [number - 1, number, number + 1];
+//     return mass;
+// }
+
+// console.log(neighboringNumbers(5));
+
+function getMathResult(number, count) {
+    let res = 0;
+    if (count < 1 || typeof(count) !== 'number') {
+        return number;
+    }
+    for (let i = 1; i <= count; i++) {
+        res += number * i;
+        if (i != count) {
+            res += '---';
         } else {
-            result += ' '.repeat(lines - k) + '*';
+            res = res;
         }
     }
-    k++;
-    result += '\n';
+    return res;
 }
-console.log(result);
+
+console.log(getMathResult(20, '3'));
