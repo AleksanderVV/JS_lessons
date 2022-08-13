@@ -27,7 +27,7 @@ function start() {
 function rememberMyFilms() {
     let i = 0;
     while (i < filmsCount) {
-        lastViewedFilms = prompt("Один из последних просмотренных фильмов?", "");
+        lastViewedFilms = prompt("Один из последних просмотренных фильмов?", "").trim();
         filmGrade = prompt("На сколько оцените его?", "");
 
         if (lastViewedFilms === "" || filmGrade === "" || lastViewedFilms === null || filmGrade === null || lastViewedFilms.length > 50) {
