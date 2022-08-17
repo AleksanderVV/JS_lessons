@@ -82,22 +82,101 @@
 
 // console.log(reverse(someString));
 
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
-function availableCurr(arr, missingCurr) {
+// function availableCurr(arr, missingCurr) {
 
-    if (arr.length === 0) {
-        return 'Нет доступных валют';
-    }
-    let str = 'Доступные валюты: \n';
-    arr.forEach((value, index) => {
-        if (value !== missingCurr) {
-            str += `${value}\n`;
+//     if (arr.length === 0) {
+//         return 'Нет доступных валют';
+//     }
+//     let str = 'Доступные валюты: \n';
+//     arr.forEach((value, index) => {
+//         if (value !== missingCurr) {
+//             str += `${value}\n`;
 
+//         }
+//     });
+//     return str;
+// }
+
+// console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
+
+//=========================================================================================
+
+// const shoppingMallData = {
+//     shops: [{
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 10
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 30,
+//     budget: 50000
+// };
+
+// function isBudgetEnough(dataArr) {
+//     let squareAllShop = 0;
+//     dataArr.shops.forEach((value, index) => {
+//         let oneShopSquare;
+//         let { width, length } = value;
+//         oneShopSquare = width * length;
+//         squareAllShop = oneShopSquare + squareAllShop;
+//         return squareAllShop;
+//     });
+
+//     let volumeAllShop = squareAllShop * dataArr.height;
+//     let costAllVolume = volumeAllShop * dataArr.moneyPer1m3;
+//     if (costAllVolume <= dataArr.budget) {
+//         return 'Бюджета достаточно';
+//     } else {
+//         return 'Бюджета недостаточно';
+//     }
+// }
+
+// console.log(isBudgetEnough(shoppingMallData));
+
+//================================================================================
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'sdf', 'werew', 'dsf'];
+
+function sortStudentsByGroups(arr) {
+
+    let copyArr = arr.sort(),
+        resArr = [],
+        string = `Оставшиеся студенты: `;
+
+    const numberOfArrays = Math.floor(copyArr.length / 3);
+
+    for (let i = 0; i < numberOfArrays; i++) {
+        resArr[i] = [];
+        for (let j = 0; j < 3; j++) {
+            resArr[i][j] = copyArr[j];
         }
-    });
-    return str;
+        copyArr = copyArr.slice(3);
+    }
+
+    let otherStudents;
+
+    !copyArr.join() ? otherStudents = '-' : otherStudents = copyArr.join(', ');
+    string += `${otherStudents}`;
+    resArr[numberOfArrays] = string;
+
+    return resArr;
+
 }
 
-console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
+
+console.log(sortStudentsByGroups(students));

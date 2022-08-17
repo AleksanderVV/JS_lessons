@@ -110,9 +110,11 @@
 // const oldArr = [1, 2, 4];
 // const newArr = oldArr.slice();
 
-const video = ['youtube', 'twitter', 'facebook'],
-    blogs = ['wp', 'livejournal', 'blogger'],
-    internet = [...video, ...blogs, 'vk'];
+// const video = ['youtube', 'twitter', 'facebook'],
+//     blogs = ['wp', 'livejournal', 'blogger'],
+//     internet = [...video, ...blogs, 'vk'];
 
-console.log(internet);
-console.log(...video); // new String
+// console.log(internet);
+// console.log(...video); // new String
+
+//================================ Closure - lexical environment ====================================
