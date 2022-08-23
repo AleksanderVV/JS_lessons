@@ -53,7 +53,7 @@ function isPangram(string) {
 
 function deepCount(a) {
     return a.reduce(function(s, e) {
-        debugger
+        // debugger
         return s + (Array.isArray(e) ? deepCount(e) : 0);
     }, a.length);
 }
