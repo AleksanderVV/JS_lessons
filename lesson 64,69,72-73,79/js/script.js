@@ -157,7 +157,67 @@ window.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', showModalByScroll);
     }
 
+    function createCardsMenu() {
+        const cardsData = [{
+                image: 'img/tabs/elite.jpg',
+                alt: 'vegy',
+                title: 'Меню “Премиум”',
+                text: 'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
+                price: 460
+            },
+            {
+                image: 'img/tabs/vegy.jpg',
+                alt: 'elite',
+                title: 'Меню "Фитнес"',
+                text: 'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
+                price: 230
+            },
+            {
+                image: 'img/tabs/post.jpg',
+                alt: 'post',
+                title: 'Меню "Постное"',
+                text: 'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
+                price: 170
+            },
+
+        ];
+
+        class MenuCard {
+            constructor(image, alt, title, text, price) {
+                this.image = image;
+                this.alt = alt;
+                this.title = title;
+                this.text = text;
+                this.price = price;
+            }
+
+            render() {
+                const cardsParrent = document.querySelector('.menu__field .container'),
+                    element = document.createElement('div');
+                element.classList.add('menu__item');
+                element.innerHTML = `
+                  <img src="${this.image}" alt="${this.alt}">
+                  <h3 class="menu__item-subtitle">${this.title}</h3>
+                  <div class="menu__item-descr">${this.text}</div>
+                  <div class="menu__item-divider"></div>
+                  <div class="menu__item-price">
+                    <div class="menu__item-cost">Цена:</div>
+                    <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+                  </div>
+                `;
+                cardsParrent.append(element);
+            }
+        }
+
+        for (let i of cardsData) {
+            new MenuCard(i.image, i.alt, i.title, i.text, i.price).render();
+        }
+    }
+
+
+
     tabsStyleFood();
     showTimeRemainPromo();
     modalWindow();
+    createCardsMenu();
 });
