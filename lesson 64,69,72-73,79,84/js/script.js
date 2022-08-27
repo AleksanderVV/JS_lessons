@@ -286,7 +286,11 @@ window.addEventListener('DOMContentLoaded', () => {
             }, 4000);
         }
 
+
+
+
     }
+
 
 
     tabsStyleFood();
