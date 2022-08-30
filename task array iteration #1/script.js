@@ -1,3 +1,5 @@
+'use strict';
+
 const films = [{
         name: 'Titanic',
         rating: 9
@@ -20,7 +22,7 @@ function showGoodFilms(arr) {
 
     return films.filter(item => item.rating >= 8);
 }
-// console.log(showGoodFilms(films));
+console.log(showGoodFilms(films));
 
 function showListOfFilms(arr) {
     let newArray = [];
@@ -33,7 +35,7 @@ function showListOfFilms(arr) {
     return result;
 }
 
-// console.log(showListOfFilms(films));
+console.log(showListOfFilms(films));
 
 function setFilmsIds(arr) {
     arr.forEach((value, index) => {
@@ -41,7 +43,7 @@ function setFilmsIds(arr) {
     });
     return arr;
 }
-// console.log(setFilmsIds(films));
+console.log(setFilmsIds(films));
 
 const tranformedArray = setFilmsIds(films);
 
