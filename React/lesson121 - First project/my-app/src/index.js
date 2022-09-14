@@ -2,15 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render( < React.StrictMode >
-    <App / >
-    </React.StrictMode>
+// const text = 'Hello world!';
+
+// const elem = (
+//     <div>
+//       <h2 className='text'>{text} {2+2}</h2>
+//       <label htmlFor="input">Input: </label>
+//       <input type="text" id='input'/>
+//       <button tabIndex={0}>Click</button>
+//     </div>
+// );
+
+
+root.render( 
+    <App/>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
