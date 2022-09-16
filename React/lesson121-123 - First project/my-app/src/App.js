@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
 
@@ -33,6 +33,14 @@ function Btn() {
 
   return <button>{logged ? 'Enter' : text}</button>
 }
+function WhoAmI ({name, surname, link}) {
+  return (
+    <div>
+      <h1>My name is {name()}, surname - {surname}</h1>
+      <a href={link}>Link</a>
+    </div>
+  )
+}
 
 function App() {
     return ( 
@@ -40,6 +48,8 @@ function App() {
         <Header/>
         <Field/>
         <Btn/>
+        <WhoAmI name={() => {return 'John'}} surname="Smith" link="facebook.com"/>
+        <WhoAmI name={() => {return 'John'}} surname="SmithY" link="facebook.com"/>
       </div>
     );
 }
