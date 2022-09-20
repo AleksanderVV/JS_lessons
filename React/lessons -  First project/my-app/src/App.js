@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
 
 const Header = () => {
   return <h2>Hello</h2>
@@ -62,7 +62,7 @@ class WhoAmI extends Component {
     const {position, years} = this.state;
 
     return (
-      <div>
+      <>
         <button onClick={this.nextYear}>{this.state.text}</button>
         <h1>My name is {name}, surname - {surname},
             age - {years}, 
@@ -72,14 +72,14 @@ class WhoAmI extends Component {
           <span>Insert </span>
           <input type="text" onChange={(e) => {this.commitInputChanges(e, 'some color')}} />
         </form>
-      </div>
+      </>
     )
   }
 }
 
 function App() {
     return ( 
-      <div className = "App" >
+      <div className='App' >
         {/* <Header/>
         <Field/>
         <Btn/> */}
