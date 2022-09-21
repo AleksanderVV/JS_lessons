@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import { Component, Fragment } from 'react';
+import styled from 'styled-components';
 
 const Header = () => {
   return <h2>Hello</h2>
@@ -34,6 +35,29 @@ function Btn() {
   return <button>{logged ? 'Enter' : text}</button>
 }
 
+const EmpItem = styled.div`
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0,0,0, .2);
+  a {
+    display: block;
+    color: ${props => props.active ? 'orange' : 'black'};
+  }
+`;
+
+const HeaderEmpItem = styled.h2`
+  font-size: 22px;
+`;
+
+export const Button = styled.button`
+  display: block;
+  padding: 5px 15px;
+  background-color: gold;
+  border: 1px solid rgba(0,0,0, .2);
+  box-shadow: 5px 5px 10px rgba(0,0,0, .2);
+`;
+
 class WhoAmI extends Component {
   constructor(props) {
     super(props);
@@ -62,30 +86,35 @@ class WhoAmI extends Component {
     const {position, years} = this.state;
 
     return (
-      <>
-        <button onClick={this.nextYear}>{this.state.text}</button>
-        <h1>My name is {name}, surname - {surname},
+      <EmpItem active>
+        <Button onClick={this.nextYear}>{this.state.text}</Button>
+        <HeaderEmpItem>My name is {name}, surname - {surname},
             age - {years}, 
-            position - {position} </h1>
+            position - {position} </HeaderEmpItem>
         <a href={link}>Link</a>
         <form>
           <span>Insert </span>
           <input type="text" onChange={(e) => {this.commitInputChanges(e, 'some color')}} />
         </form>
-      </>
+      </EmpItem>
     )
   }
 }
 
+const Wrapper = styled.div`
+  width: 600px;
+  margin: 80px auto 0 auto;
+`;
+
 function App() {
     return ( 
-      <div className='App' >
+      <Wrapper>
         {/* <Header/>
         <Field/>
         <Btn/> */}
         <WhoAmI name= 'John' surname="Smith" link="facebook.com"/>
         <WhoAmI name= 'Alex' surname="SmithY" link="facebook.com"/>
-      </div>
+      </Wrapper>
     );
 }
 
