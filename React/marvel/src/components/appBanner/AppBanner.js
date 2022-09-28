@@ -15,4 +15,4 @@ const AppBanner = () => {
     )
 }
 
-export default AppBanner;
+export default AppBanner; 
