@@ -1,16 +1,18 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {Container, Row, Col} from 'react-bootstrap';
 
-function ContainerExample() {
-  return (
-    <Container>
-      <Row>
-        <Col>1 of 2</Col>
-        <Col>2 of 2</Col>
-      </Row>
-    </Container>
-  );
+const BootstrapTest = (props) => {
+    return (
+        <Container className="mt-5 mb-5">
+            <Row>
+                <Col>
+                    {props.left}
+                </Col>
+                <Col>
+                    {props.right}
+                </Col>
+            </Row>
+        </Container>
+    )
 }
 
-export default ContainerExample;
+export default BootstrapTest;

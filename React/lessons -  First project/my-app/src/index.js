@@ -1,5 +1,5 @@
 import React, {StrictMode} from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
@@ -9,16 +9,6 @@ import ContainerExample from './ bootstrapTest'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// const text = 'Hello world!';
-
-// const elem = (
-//     <div>
-//       <h2 className='text'>{text} {2+2}</h2>
-//       <label htmlFor="input">Input: </label>
-//       <input type="text" id='input'/>
-//       <button tabIndex={0}>Click</button>
-//     </div>
-// );
 
 const BigButton = styled(Button)`
   width: 245px;
