@@ -3,9 +3,11 @@ import {useHttp} from '../hooks/http.hook';
 const useMarvelService = () => {
     const {loading, request, error, clearError} = useHttp();
 
+    // const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
+    // const _apiKey = 'apikey=c5d6fc8b83116d92ed468ce36bac6c62';
+
     const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
-    // ЗДЕСЬ БУДЕТ ВАШ КЛЮЧ, ЭТОТ КЛЮЧ МОЖЕТ НЕ РАБОТАТЬ
-    const _apiKey = 'apikey=c5d6fc8b83116d92ed468ce36bac6c62';
+    const _apiKey = 'apikey=d16d8868d4036e3d39fdc98f82ffe14b';
     const _baseOffset = 210;
 
     const getAllCharacters = async (offset = _baseOffset) => {
